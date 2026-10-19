@@ -1,0 +1,71 @@
+SIMULADOR INTELIGENTE DE ARMAZENAGEM – UCE II
+DESKTOP WINDOWS – versão 4.6.0
+
+Aplicação desktop nativa (Python/Tkinter + matplotlib). Funciona sem internet
+e sem navegador.
+
+INSTALAR (usuário final)
+  1. Execute Setup_Simulador_Armazenagem_UCE_II_Desktop_v4.6.0.exe
+     (pasta installer_output).
+  2. Avance as telas. Não precisa ser administrador.
+  3. Abra pelo menu Iniciar: "Simulador Inteligente de Armazenagem - UCE II".
+  Se já houver uma versão 4.x instalada, o Setup atualiza por cima.
+  Se o Windows SmartScreen avisar "aplicativo não reconhecido", clique em
+  "Mais informações" > "Executar assim mesmo" (o instalador não é assinado
+  digitalmente, o que é normal em projetos acadêmicos).
+
+ONDE FICAM OS DADOS
+  %LOCALAPPDATA%\SimuladorArmazenagemUCEII
+    relatorios\             cópias dos documentos do trabalho
+    simulador_armazenagem.db banco SQLite da biblioteca de documentos
+    ultimo_cenario.json     último cenário calculado (reabre sozinho)
+    simulador.log           registro de erros
+  Há um atalho "Pasta de dados e documentos" no menu Iniciar.
+  Desinstalar o programa NÃO apaga essa pasta.
+  Documentos da versão 4.5.x (pasta relatorios ao lado do programa) são
+  copiados automaticamente na primeira abertura.
+
+ABAS DO PROGRAMA
+  01 Dados          armazém, caixa, avarias, horizonte, soluções e critério
+  02 Dashboard      6 indicadores e avisos automáticos
+  03 Comparativo    fichas das soluções e tabela ordenada pelo critério
+  04 Análise        8 gráficos (os mesmos do PDF)
+  05 Relatório      Central de relatórios + resultado técnico completo
+  06 Documentos     acesso rápido aos 3 relatórios principais + biblioteca
+                    com quantos documentos quiser
+
+CENTRAL DE RELATÓRIOS (aba 05)
+  Marque os relatórios e escolha:
+    • Gerar PDF dos selecionados (um único arquivo)
+    • Imprimir selecionados (impressora padrão do Windows)
+    • Gerar um PDF por relatório
+    • Exportar pacote completo: PDF completo + 8 PDFs separados + CSV +
+      JSON + 8 gráficos PNG
+  Relatórios disponíveis:
+    1. Resumo do cenário e parâmetros
+    2. Comparativo das soluções e leitura do resultado
+    3. Gráficos: custo × perda evitada e economia líquida
+    4. Gráficos: custo por 1% de proteção e perda residual
+    5. Gráficos: payback e análise multicritério
+    6. Evolução mensal acumulada e sensibilidade (±20%)
+    7. Ficha detalhada de cada solução
+    8. Lista de documentos do projeto
+  A impressão direta usa o leitor de PDF padrão do Windows. Se nenhum
+  estiver configurado, o PDF abre para imprimir com Ctrl+P.
+
+BIBLIOTECA DE DOCUMENTOS (aba 06)
+  • Acesso rápido: Mapa de Empatia, Business Model Canvas e Pesquisa de
+    Anterioridade (como nas versões anteriores).
+  • Adicionar documentos…: escolha um ou vários arquivos de uma vez
+    (PDF, Word, Excel, PowerPoint, imagens, texto). Sem limite de quantidade.
+  • Abrir (ou duplo clique), Imprimir, Editar dados (título, categoria,
+    observações), Substituir arquivo, Remover, Abrir pasta e Buscar.
+  O programa guarda uma cópia de cada arquivo; o original não é alterado.
+
+GERAR O PROGRAMA E O INSTALADOR (desenvolvedores)
+  1. Instale Python 3.10 a 3.13 e o Inno Setup 6 (jrsoftware.org/isdl.php).
+  2. Dê dois cliques em GERAR_INSTALADOR.bat.
+     Ele cria um ambiente isolado, instala as versões de requirements.txt,
+     gera o programa em dist\, roda o autoteste e compila o instalador.
+  Testar sem gerar: python simulador_desktop.py
+  Autoteste:         python simulador_desktop.py --selftest PASTA

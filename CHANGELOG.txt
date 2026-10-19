@@ -1,0 +1,64 @@
+SIMULADOR INTELIGENTE DE ARMAZENAGEM – UCE II (DESKTOP)
+HISTÓRICO DE VERSÕES
+
+v4.6.0
+======
+Relatórios
+  - Central de relatórios: 8 relatórios selecionáveis, gerados num PDF único,
+    um PDF por relatório, ou enviados direto à impressora.
+  - Novos relatórios: evolução mensal acumulada, sensibilidade (tornado ±20%),
+    ficha detalhada de cada solução e lista de documentos do projeto.
+  - Aba Análise com os 8 gráficos do PDF; exportação dos 8 em PNG.
+  - Resultado técnico completo na tela: recomendação, fichas das soluções
+    e sensibilidade.
+  - PDF sempre em A4, com logo, número de página e nome do cenário.
+  - CORRIGIDO: rótulos "Cantoneiras\nV-Board" com barra literal na página 3.
+  - CORRIGIDO: gráfico ROI × Proteção misturava escalas e escondia ROI
+    negativo; substituído por Economia líquida.
+
+Documentos
+  - Biblioteca sem limite de documentos (PDF, Word, Excel, PowerPoint,
+    imagens...), com categoria, observações, busca, abrir, imprimir,
+    substituir e remover. Adição de vários arquivos de uma vez.
+  - Mantido o acesso rápido aos 3 relatórios das versões anteriores.
+  - Dados movidos para %LOCALAPPDATA%\SimuladorArmazenagemUCEII (antes ficavam
+    ao lado do .exe e quebravam a aba quando instalado em Arquivos de
+    Programas). Migração automática dos relatórios da v4.5.x.
+
+Modelo de cálculo (alinhado ao simulador HTML v2.1)
+  - Taxa de avaria mensal (antes: 100% das caixas danificadas).
+  - Horizonte de análise e vida útil com recompras.
+  - Payback em meses (antes: "períodos" sem unidade).
+  - Fator de ocupação e limite de empilhamento pelo pé-direito.
+  - Critério de recomendação escolhido pelo usuário.
+  - Possível desmarcar soluções; quantidade 0 permitida.
+  - CORRIGIDO: erro de arredondamento em divisões como 7,2 ÷ 0,12.
+  - CORRIGIDO: camadas fracionárias eram truncadas sem aviso.
+
+Interface
+  - Logo do simulador no cabeçalho, no ícone da janela e no PDF.
+  - Cores mantidas (azul-marinho, azul e laranja).
+  - Recálculo automático ao digitar; campos inválidos destacados.
+  - CORRIGIDO: a roda do mouse só rolava a aba Documentos.
+  - Janela ajustada a telas pequenas (1366×768); nitidez em telas com
+    escala do Windows (DPI).
+  - Último cenário reaberto automaticamente.
+  - Erros inesperados mostram mensagem e ficam registrados em simulador.log.
+  - Equipe: Daniel · Felipe · Marcos · Mário.
+
+Exportações
+  - CSV compatível com Excel em português (vírgula decimal) e com parâmetros.
+  - Mensagem clara quando o arquivo está aberto em outro programa.
+  - Cenários JSON das versões 4.x e do HTML 2.x continuam abrindo.
+
+Empacotamento
+  - Programa em pasta (--onedir): abre bem mais rápido e é menos bloqueado
+    por antivírus que o .exe único.
+  - Versões das bibliotecas fixadas em requirements.txt e build em ambiente
+    isolado; autoteste do programa gerado antes de compilar o instalador.
+  - Instalador 4.6.0 com ícone, atalho para a pasta de dados, atualização
+    sobre as versões 4.x e opção de instalar para todos os usuários.
+
+v4.5.3 e anteriores
+===================
+  Ver LEIA-ME da v4.5.3.
